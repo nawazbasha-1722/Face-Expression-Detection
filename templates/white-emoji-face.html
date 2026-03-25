@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emoji Face Image</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .emoji-face-container {
+            width: 400px;
+            height: 400px;
+            background-color: white;
+            border: 3px solid #f0f0f0;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .emoji-face {
+            font-size: 200px;
+            line-height: 1;
+            animation: float 3s ease-in-out infinite;
+            filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.2));
+        }
+
+        .emoji-decoration {
+            position: absolute;
+            font-size: 30px;
+            animation: sparkle 2s ease-in-out infinite;
+        }
+
+        .decoration-1 { top: 20%; left: 15%; animation-delay: 0s; }
+        .decoration-2 { top: 25%; right: 20%; animation-delay: 0.5s; }
+        .decoration-3 { bottom: 30%; left: 20%; animation-delay: 1s; }
+        .decoration-4 { bottom: 25%; right: 15%; animation-delay: 1.5s; }
+        .decoration-5 { top: 50%; left: 10%; animation-delay: 0.3s; }
+        .decoration-6 { top: 50%; right: 10%; animation-delay: 0.8s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes sparkle {
+            0%, 100% { 
+                opacity: 0.7;
+                transform: scale(1);
+            }
+            50% { 
+                opacity: 1;
+                transform: scale(1.2);
+            }
+        }
+
+        .title {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .subtitle {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 16px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="emoji-face-container">
+        <div class="title">Emoji Face</div>
+        
+        <!-- Main emoji face -->
+        <div class="emoji-face">😊</div>
+        
+        <!-- Decorative emojis -->
+        <span class="emoji-decoration decoration-1">✨</span>
+        <span class="emoji-decoration decoration-2">🌟</span>
+        <span class="emoji-decoration decoration-3">💫</span>
+        <span class="emoji-decoration decoration-4">⭐</span>
+        <span class="emoji-decoration decoration-5">✨</span>
+        <span class="emoji-decoration decoration-6">🌟</span>
+        
+        <div class="subtitle">Happy Face Image</div>
+    </div>
+
+    <!-- Alternative emoji faces -->
+    <script>
+        const emojiFaces = ['😊', '😄', '😍', '🥰', '😎', '🤗', '😋', '😇'];
+        const mainEmoji = document.querySelector('.emoji-face');
+        let currentIndex = 0;
+
+        // Change emoji every 3 seconds
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % emojiFaces.length;
+            mainEmoji.textContent = emojiFaces[currentIndex];
+        }, 3000);
+    </script>
+</body>
+</html>

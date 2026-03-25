@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Upload Photo for Emotion Detection</title>
+</head>
+<body>
+    <h1>Upload Photo for Emotion Detection</h1>
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    {% if emotion %}
+        <p>Detected Emotion: <strong>{{ emotion }}</strong></p>
+    {% endif %}
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="photo" accept="image/*" required />
+        <button type="submit">Upload and Detect</button>
+    </form>
+    <p><a href="/">Back to Webcam Capture</a></p>
+</body>
+</html>

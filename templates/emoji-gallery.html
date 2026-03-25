@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emoji Face Gallery</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .gallery-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .gallery-title {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 40px;
+            font-weight: bold;
+        }
+
+        .emoji-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .emoji-card {
+            background: white;
+            border: 2px solid #f0f0f0;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .emoji-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .emoji-display {
+            font-size: 100px;
+            line-height: 1;
+            margin-bottom: 15px;
+            filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.2));
+        }
+
+        .emoji-name {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .emoji-description {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        .color-variations {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .color-dot {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 1px solid #ddd;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .color-dot:hover {
+            transform: scale(1.2);
+        }
+
+        .white-bg { background-color: white; }
+        .yellow-bg { background-color: #FFFACD; }
+        .pink-bg { background-color: #FFB6C1; }
+        .blue-bg { background-color: #E6F3FF; }
+        .green-bg { background-color: #F0FFF0; }
+    </style>
+</head>
+<body>
+    <div class="gallery-container">
+        <h1 class="gallery-title">Emoji Face Gallery</h1>
+        
+        <div class="emoji-grid">
+            <!-- Happy Face -->
+            <div class="emoji-card">
+                <div class="emoji-display">😊</div>
+                <div class="emoji-name">Happy Face</div>
+                <div class="emoji-description">Bright and cheerful expression with a warm smile</div>
+                <div class="color-variations">
+                    <div class="color-dot white-bg" title="White Background"></div>
+                    <div class="color-dot yellow-bg" title="Yellow Background"></div>
+                    <div class="color-dot pink-bg" title="Pink Background"></div>
+                </div>
+            </div>
+
+            <!-- Laughing Face -->
+            <div class="emoji-card">
+                <div class="emoji-display">😄</div>
+                <div class="emoji-name">Laughing Face</div>
+                <div class="emoji-description">Big smile with happy eyes and rosy cheeks</div>
+                <div class="color-variations">
+                    <div class="color-dot white-bg" title="White Background"></div>
+                    <div class="color-dot yellow-bg" title="Yellow Background"></div>
+                    <div class="color-dot green-bg" title="Green Background"></div>
+                </div>
+            </div>
+
+            <!-- Love Face -->
+            <div class="emoji-card">
+                <div class="emoji-display">😍</div>
+                <div class="emoji-name">Love Face</div>
+                <div class="emoji-description">Heart eyes with a big smile, full of love</div>
+                <div class="color-variations">
+                    <div class="color-dot white-bg" title="White Background"></div>
+                    <div class="color-dot pink-bg" title="Pink Background"></div>
+                    <div class="color-dot red-bg" style="background-color: #FFE4E1;" title="Red Background"></div>
+                </div>
+            </div>
+
+            <!-- Cool Face -->
+            <div class="emoji-card">
+                <div class="emoji-display">😎</div>
+                <div class="emoji-name">Cool Face</div>
+                <div class="emoji-description">Relaxed expression with sunglasses and a smile</div>
+                <div class="color-variations">
+                    <div class="color-dot white-bg" title="White Background"></div>
+                    <div class="color-dot blue-bg" title="Blue Background"></div>
+                    <div class="color-dot yellow-bg" title="Yellow Background"></div>
+                </div>
+            </div>
+
+            <!-- Wink Face -->
+            <div class="emoji-card">
+                <div class="emoji-display">😉</div>
+                <div class="emoji-name">Wink Face</div>
+                <div class="emoji-description">Playful wink with a cheeky smile</div>
+                <div class="color-variations">
+                    <div class="color-dot white-bg" title="White Background"></div>
+                    <div class="color-dot pink-bg" title="Pink Background"></div>
+                    <div class="color-dot purple-bg" style="background-color: #E6E6FA;" title="Purple Background"></div>
+                </div>
+            </div>
+
+            <!-- Kiss Face -->
+            <div class="emoji-card">
+                <div class="emoji-display">😘</div>
+                <div class="emoji-name">Kiss Face</div>
+                <div class="emoji-description">Blowing a kiss with heart-shaped lips</div>
+                <div class="color-variations">
+                    <div class="color-dot white-bg" title="White Background"></div>
+                    <div class="color-dot pink-bg" title="Pink Background"></div>
+                    <div class="color-dot red-bg" style="background-color: #FFF0F5;" title="Red Background"></div>
+                </div>
+            </div>
+
+            <!-- Sad Face -->
+            <div class="emoji-card">
+                <div class="emoji-display">😢</div>
+                <div class="emoji-name">Sad Face</div>
+                <div class="emoji-description">Tearful expression with a frown</div>
+                <div class="color-variations">
+                    <div class="color-dot white-bg" title="White Background"></div>
+                    <div class="color-dot blue-bg" title="Blue Background"></div>
+                    <div class="color-dot gray-bg" style="background-color: #F5F5F5;" title="Gray Background"></div>
+                </div>
+            </div>
+
+            <!-- Angry Face -->
+            <div class="emoji-card">
+                <div class="emoji-display">😠</div>
+                <div class="emoji-name">Angry Face</div>
+                <div class="emoji-description">Frowning face with angry expression</div>
+                <div class="color-variations">
+                    <div class="color-dot white-bg" title="White Background"></div>
+                    <div class="color-dot red-bg" style="background-color: #FFF0F0;" title="Red Background"></div>
+                    <div class="color-dot orange-bg" style="background-color: #FFF8DC;" title="Orange Background"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add click functionality to color dots
+        document.querySelectorAll('.color-dot').forEach(dot => {
+            dot.addEventListener('click', function() {
+                const card = this.closest('.emoji-card');
+                card.style.backgroundColor = window.getComputedStyle(this).backgroundColor;
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+/* Centering the main container */
+.main {
+  display: flex; /* Ensure flexbox is used for centering */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+}
+
+/* Styling for the body */
+body {
+  margin: 0; /* Remove default margin */
+  font-family: 'Times New Roman', Times, serif; /* Set the font for the entire document */
+  background-color: white;
+  /* background-image : url(https://thumbs.dreamstime.com/b/face-recognition-icon-outline-style-thin-line-creative-logo-graphic-design-more-162826646.jpg); 
+  background-size: 75% 80%;  */
+  background-position: center; /* Center the background image */
+  display: flex; /* Flexbox for centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100vh; /* Set the height to the full viewport */
+}
+h1 {
+  position: absolute;
+  top: 0; /* Aligns to the top */
+  left: 50%; /* Centers horizontally */
+  transform: translateX(-50%); /* Adjusts for perfect centering */
+  margin: 0; /* Removes default margin */
+  padding: 10px; /* Adds some space */
+  text-align: center;
+  background:none; /* Optional: Semi-transparent background */
+  width: 100%; /* Ensures it spans the page */
+}
+
+
+/* Styling for the container holding video and canvas */
+.container {
+  justify-content: center;
+  text-align: center; /* Center all the text inside the container */
+  position: relative; /* Enable absolute positioning for child elements like canvas */
+}
+
+/* Styling for the video element */
+#video {
+  border: 2px solid #333; /* Add a dark border around the video */
+  width: 100%; /* Fixed width for the video */
+  height: 100%; /* Fixed height for the video */
+}
+#capture {
+  height: 100%; /* Try using height instead of max-height */
+  width: 50%;
+  position: relative; /* Use fixed if you want it to stay at the top */
+  justify-content: center;
+  align-items: center;
+  background-color: transparent; /* Correct property */
+  padding: 3%;
+}
+
+
+/* Styling for the canvas element overlaying the video */
+#canvas {
+  justify-content:center;
+  position: absolute; /* Overlay the canvas on the video */
+  top: 0; /* Align canvas with the top of the video */
+  left: 0; /* Align canvas with the left of the video */
+  width: 0%; /* Match the width of the video */
+  height: 0%; /* Match the height of the video */
+}
+
+/* Styling for the emotion label text */
+#emotion-label {
+  margin-top: 20px; /* Add some space above the label */
+  font-size: 24px; /* Increase font size */
+  font-weight: bold; /* Make the text bold */
+  color: black; /* Set a dark gray color for the text */
+  position: relative;
+  top: 0; /* Aligns to the top */
+  left: 50%; /* Centers horizontally */
+  transform: translateX(-50%); /* Adjusts for perfect centering */
+  margin: 0; /* Removes default margin */
+  /* padding: 10px; Adds some space */
+  text-align: center;
+  background: whitesmoke; /* Optional: Semi-transparent background */
+  width: 100%; /* Ensures it spans the page */
+}
+/* .image{
+  height: 50%;
+  width: 50%;
+  padding-left: 100%;
+} */
