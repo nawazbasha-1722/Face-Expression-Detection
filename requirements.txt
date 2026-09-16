@@ -5,4 +5,4 @@ opencv-python-headless
 tensorflow
 requests
 numpy
-setuptools
+setuptools<70.0.0
