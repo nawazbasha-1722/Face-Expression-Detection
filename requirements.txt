@@ -1,3 +1,4 @@
+setuptools==69.5.1
 Flask
 gunicorn
 fer
@@ -5,4 +6,3 @@ opencv-python-headless
 tensorflow
 requests
 numpy
-setuptools<70.0.0
