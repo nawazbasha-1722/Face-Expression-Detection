@@ -1,6 +1,7 @@
-
 Flask
 gunicorn
-opencv-python
+fer
+opencv-python-headless
+tensorflow-cpu
 requests
-flask_sqlalchemy
+numpy
