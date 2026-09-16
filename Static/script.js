@@ -10,6 +10,14 @@ let isProcessing = false;
 // Initialize camera access
 async function initCamera() {
     try {
+        if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+            if (location.protocol !== 'https:' && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
+                location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+                return;
+            }
+            throw new Error("Webcam access requires HTTPS or browser media permission support.");
+        }
+
         const streamLocal = await navigator.mediaDevices.getUserMedia({ 
             video: { 
                 width: { ideal: 640 },
@@ -20,24 +28,22 @@ async function initCamera() {
 
         stream = streamLocal;
 
-        // Set video source
+        // Set video source and play
         video.srcObject = stream;
-        console.log('Video srcObject set:', video.srcObject);
+        await video.play().catch(err => console.log('Video play callback:', err));
 
         // Enable start button
         startBtn.disabled = false;
 
         console.log('Camera access granted');
-        expressionOutput.textContent = 'Camera access granted. Click Start Recognition to begin.';
+        expressionOutput.textContent = 'Camera ready. Click Start Recognition to begin.';
     } catch (error) {
         console.error('Error accessing camera:', error);
-        expressionOutput.textContent = 'Camera error: ' + error.message;
 
-        // Provide helpful error messages
-        if (error.name === 'NotAllowedError') {
-            expressionOutput.textContent = 'Camera access denied. Please allow camera permissions.';
+        if (error.name === 'NotAllowedError' || error.name === 'PermissionDeniedError') {
+            expressionOutput.textContent = 'Camera permission denied. Please click the camera/lock icon in your browser address bar to allow camera access.';
         } else if (error.name === 'NotFoundError') {
-            expressionOutput.textContent = 'No camera found. Please check your device.';
+            expressionOutput.textContent = 'No camera found. Please connect a webcam or try the Photo Upload feature.';
         } else {
             expressionOutput.textContent = 'Camera error: ' + error.message;
         }
@@ -60,6 +66,12 @@ async function processFrame() {
     if (!isProcessing) return;
     
     try {
+        if (!video.videoWidth || !video.videoHeight) {
+            console.log('Video stream frame not ready yet...');
+            if (isProcessing) setTimeout(processFrame, 500);
+            return;
+        }
+
         // Create canvas to capture frame
         const canvas = document.createElement('canvas');
         canvas.width = video.videoWidth;
